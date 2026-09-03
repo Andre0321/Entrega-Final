@@ -9,3 +9,5 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 
 ### Agregado
 - Se creó la estructura inicial del proyecto SnackLab (index.html semántico, css/styles.css con reset base, img/, README.md, .gitignore)
+- Se creó la barra de navegación con logo, menú de anclas internas y CTA "Crear mi SnackBox"
+- Se definieron las variables CSS de la paleta de marca (:root)

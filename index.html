@@ -11,9 +11,23 @@
     <!-- ============================================= -->
     <!-- HEADER: zona superior con la navegación       -->
     <!-- ============================================= -->
-    <header>
-        <nav>
-            <!-- Aquí irá el logo, el menú y el CTA (Fase 4) -->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logo: enlaza al inicio de la página -->
+            <a href="#inicio" class="navbar__logo">SNACKLAB 🍓</a>
+
+            <!-- Menú de enlaces internos (anclas a cada sección) -->
+            <ul class="navbar__menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#como-funciona">Personaliza</a></li>
+                <li><a href="#snacks">Snacks</a></li>
+                <li><a href="#ocasiones">Ocasiones</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Botón principal (CTA): visualmente es un botón, por dentro un enlace -->
+            <a href="#contacto" class="navbar__cta">Crear mi SnackBox</a>
         </nav>
     </header>
 
