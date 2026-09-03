@@ -2,6 +2,17 @@
 /* SNACKLAB - Hoja de estilos principal           */
 /* ============================================= */
 
+/* --- Carga de la fuente decorativa ---
+   @font-face "instala" la fuente en la web desde un archivo local.
+   La ruta ../Fonts/ sube un nivel (sale de css/) y entra a la carpeta Fonts/. */
+@font-face {
+    font-family: 'Shadows Into Light';
+    src: url('../Fonts/ShadowsIntoLight-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* muestra texto de reserva mientras la fuente carga */
+}
+
 /* --- Variables CSS (paleta y valores reutilizables) ---
    Se definen una vez aquí y se usan en todo el archivo con var(--nombre).
    Si quieres cambiar un color de toda la web, lo cambias en un solo lugar. */
@@ -16,6 +27,9 @@
     --radius: 12px;             /* redondeo estándar de bordes */
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* sombra suave estándar */
     --transition: 0.3s ease;    /* velocidad estándar de animaciones */
+
+    /* Fuente decorativa para logo y títulos (jerarquía tipográfica) */
+    --font-titles: 'Shadows Into Light', cursive;
 }
 
 /* --- Reset básico ---
@@ -58,6 +72,15 @@ ul {
     list-style: none;
 }
 
+/* Todos los títulos de sección usarán la fuente decorativa.
+   Como aún no existen h1/h2 en el HTML, esta regla los estilizará
+   automáticamente en cuanto los creemos en las siguientes fases. */
+h1,
+h2 {
+    font-family: var(--font-titles);
+    font-weight: 400;
+}
+
 /* ============================================= */
 /* NAVBAR                                         */
 /* ============================================= */
@@ -84,8 +107,9 @@ ul {
 }
 
 .navbar__logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: var(--font-titles); /* fuente decorativa en el logo */
+    font-size: 1.8rem;
+    font-weight: 400;                /* esta fuente solo tiene peso 400 */
     color: var(--primary-color);
 }
 
