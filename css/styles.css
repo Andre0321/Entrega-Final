@@ -1,0 +1,41 @@
+/* ============================================= */
+/* SNACKLAB - Hoja de estilos principal           */
+/* ============================================= */
+
+/* --- Reset básico ---
+   Quita los márgenes/rellenos por defecto del navegador
+   y hace que el padding no aumente el ancho de los elementos. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hace que al hacer clic en un enlace del menú,
+   la página se desplace suavemente en vez de saltar. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos base del cuerpo (los ajustaremos en la Fase 6 - Diseño) */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+/* Las imágenes nunca se salen de su contenedor */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Quitamos el subrayado y el color por defecto de los enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Quitamos los puntos de las listas */
+ul {
+    list-style: none;
+}

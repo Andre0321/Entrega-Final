@@ -1,0 +1,11 @@
+# Editores / IDE
+.idea
+.vscode
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
+
+# Node (por si más adelante se usa alguna herramienta)
+node_modules
+dist
