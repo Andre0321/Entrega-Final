@@ -12,3 +12,5 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se creó la barra de navegación con logo, menú de anclas internas y CTA "Crear mi SnackBox"
 - Se definieron las variables CSS de la paleta de marca (:root)
 - Se agregó la fuente decorativa "Shadows Into Light" (local vía @font-face) aplicada al logo y a los títulos (h1, h2)
+- Se construyó la sección hero con título, subtítulo, texto de valor, botones (principal y secundario) e imagen placeholder
+- Se crearon estilos reutilizables de botones (.btn, .btn--primary, .btn--secondary)
