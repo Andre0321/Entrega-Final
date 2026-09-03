@@ -12,3 +12,6 @@ dist
 
 # Archivos comprimidos / descargas (no versionar)
 *.zip
+
+# La carpeta img solo debe contener imágenes, no páginas HTML guardadas
+img/*.html
