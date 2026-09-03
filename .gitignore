@@ -9,3 +9,6 @@ Thumbs.db
 # Node (por si más adelante se usa alguna herramienta)
 node_modules
 dist
+
+# Archivos comprimidos / descargas (no versionar)
+*.zip
