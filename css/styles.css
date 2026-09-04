@@ -395,46 +395,98 @@ h3 {
 .section__subtitle {
     font-size: 1.1rem;
     margin-bottom: 3rem;
-    color: var(--text-color);
+    color: var(--text-light);
+}
+
+/* Título en MAYÚSCULAS con destellos decorativos a los lados.
+   Los destellos (líneas coral) se hacen con ::before y ::after. */
+.section__title--sparkles {
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.section__title--sparkles::before,
+.section__title--sparkles::after {
+    content: "〰";
+    color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
 /* ============================================= */
 /* SECCIÓN "CÓMO FUNCIONA" (CSS Grid)             */
 /* ============================================= */
 
-/* GRID: 4 columnas del mismo ancho.
-   repeat(4, 1fr) = "crea 4 columnas, cada una de 1 fracción del espacio".
-   gap = separación entre las tarjetas. */
+/* GRID: 4 columnas del mismo ancho. */
 .steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
-/* Cada tarjeta de paso */
+/* Cada tarjeta de paso.
+   position: relative para poder colocar la línea punteada conectora. */
 .step-card {
+    position: relative;
     background-color: var(--white);
-    border-radius: var(--radius);
+    border-radius: 20px;
     box-shadow: var(--shadow);
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: left;
     transition: transform var(--transition);
 }
 
-/* Hover: la tarjeta se "levanta" al pasar el mouse */
 .step-card:hover {
     transform: translateY(-8px);
 }
 
-/* Número grande del paso (01, 02...) */
+/* --- Línea punteada conectora entre tarjetas ---
+   Se dibuja con ::after a la derecha de cada tarjeta.
+   La última tarjeta no la lleva (:last-child). */
+.step-card::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: -1.5rem;
+    width: 1.5rem;
+    border-top: 3px dotted var(--primary-color);
+}
+
+.step-card:last-child::after {
+    display: none; /* la última no conecta con nada */
+}
+
+/* Número dentro de un círculo amarillo */
 .step-card__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    font-family: var(--font-titles);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+/* Ícono grande (emoji) del paso */
+.step-card__icon {
     display: block;
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .step-card__title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+}
+
+.step-card__text {
+    font-size: 0.95rem;
+    color: var(--text-light);
 }
