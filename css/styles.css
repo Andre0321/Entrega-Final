@@ -347,29 +347,19 @@ h3 {
     gap: 1rem;
 }
 
-/* --- Imagen (placeholder temporal) ---
-   Recuadro con degradado cálido y un emoji de caja grande.
-   Cuando tengas la imagen real, reemplazaremos este bloque. */
+/* --- Imagen principal del hero --- */
 .hero__image {
-    height: 380px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 24px;
-    box-shadow: var(--shadow);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    color: var(--white);
 }
 
-.hero__image-emoji {
-    font-size: 6rem;
-}
-
-.hero__image-caption {
-    font-family: var(--font-script);
-    font-size: 1.8rem;
+/* La imagen se adapta a su columna y mantiene sus proporciones.
+   object-fit: contain evita que se deforme. */
+.hero__image img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 24px;
 }
 
 /* ============================================= */
