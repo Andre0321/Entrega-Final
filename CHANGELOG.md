@@ -17,5 +17,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se construyó la sección "¿Cómo funciona?" con 4 pasos usando CSS Grid
 - Se crearon estilos reutilizables de sección (.section, .section__title, .section__subtitle)
 
+- Se rediseñó la interfaz visual (paleta cálida, fuentes Baloo 2 y Nunito vía Google Fonts, logo de dos colores con tagline, hero con título de dos líneas y formas decorativas, sección "Cómo funciona" con círculos, íconos y líneas punteadas)
+
 ### Corregido
 - Se eliminó un archivo HTML ajeno guardado por error en la carpeta img/

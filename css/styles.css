@@ -18,18 +18,25 @@
    Si quieres cambiar un color de toda la web, lo cambias en un solo lugar. */
 :root {
     --primary-color: #ff5a5f;   /* coral: color principal de la marca */
+    --primary-dark: #e94b50;    /* coral más oscuro (hover) */
     --secondary-color: #ff9f45; /* naranja */
-    --accent-color: #ffd23f;    /* amarillo */
-    --background-color: #fff8f0;/* crema: fondo general */
-    --text-color: #4a2c2a;      /* café oscuro: texto */
+    --accent-color: #f9c22e;    /* amarillo dorado: círculos y subrayados */
+    --background-color: #fdf3ea;/* crema cálido: fondo general */
+    --cream-dark: #fbe9db;      /* crema un poco más intenso (secciones) */
+    --text-color: #4a2c2a;      /* café oscuro: texto y logo */
+    --text-light: #7a5c52;      /* café claro: descripciones */
     --white: #ffffff;
 
-    --radius: 12px;             /* redondeo estándar de bordes */
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* sombra suave estándar */
+    --radius: 16px;             /* redondeo estándar de bordes */
+    --shadow: 0 8px 24px rgba(233, 75, 80, 0.12); /* sombra suave cálida */
     --transition: 0.3s ease;    /* velocidad estándar de animaciones */
 
-    /* Fuente decorativa para logo y títulos (jerarquía tipográfica) */
-    --font-titles: 'Shadows Into Light', cursive;
+    /* Fuente manuscrita: solo para el logo y el tagline */
+    --font-script: 'Shadows Into Light', cursive;
+    /* Fuente gruesa y redondeada: títulos grandes (hero, secciones) */
+    --font-titles: 'Baloo 2', cursive;
+    /* Fuente para textos normales */
+    --font-body: 'Nunito', 'Segoe UI', sans-serif;
 }
 
 /* --- Reset básico ---
@@ -49,10 +56,11 @@ html {
 
 /* Estilos base del cuerpo */
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    overflow-x: hidden; /* evita scroll horizontal por las formas decorativas */
 }
 
 /* Las imágenes nunca se salen de su contenedor */
@@ -72,13 +80,13 @@ ul {
     list-style: none;
 }
 
-/* Todos los títulos de sección usarán la fuente decorativa.
-   Como aún no existen h1/h2 en el HTML, esta regla los estilizará
-   automáticamente en cuanto los creemos en las siguientes fases. */
+/* Títulos grandes: fuente gruesa y redondeada (Baloo 2) */
 h1,
-h2 {
+h2,
+h3 {
     font-family: var(--font-titles);
-    font-weight: 400;
+    font-weight: 800;
+    line-height: 1.1;
 }
 
 /* ============================================= */
@@ -106,42 +114,81 @@ h2 {
     padding: 1rem 2rem;
 }
 
+/* Logo: el enlace es una columna (texto arriba, tagline abajo) */
 .navbar__logo {
-    font-family: var(--font-titles); /* fuente decorativa en el logo */
-    font-size: 1.8rem;
-    font-weight: 400;                /* esta fuente solo tiene peso 400 */
-    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+/* Texto principal del logo, en fuente gruesa Baloo */
+.navbar__logo-text {
+    font-family: var(--font-titles);
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.navbar__logo-snack {
+    color: var(--text-color); /* "SNACK" en café oscuro */
+}
+
+.navbar__logo-lab {
+    color: var(--primary-color); /* "LAB" en coral */
+}
+
+/* Tagline pequeño en fuente manuscrita debajo del logo */
+.navbar__logo-tagline {
+    font-family: var(--font-script);
+    font-size: 0.9rem;
+    color: var(--text-light);
 }
 
 /* El menú también es un contenedor flex (enlaces en fila con separación) */
 .navbar__menu {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 
 .navbar__menu a {
-    font-weight: 600;
+    position: relative;
+    font-weight: 700;
     padding: 0.3rem 0;
-    transition: color var(--transition); /* cambio de color suave al pasar el mouse */
+    transition: color var(--transition);
 }
 
-/* Hover: cuando el mouse pasa por encima, el enlace cambia de color */
 .navbar__menu a:hover {
     color: var(--primary-color);
 }
 
-/* CTA: enlace con apariencia de botón */
+/* Enlace activo: color coral + subrayado corto debajo.
+   El subrayado se dibuja con un pseudo-elemento ::after (decoración sin HTML extra). */
+.navbar__menu a.is-active {
+    color: var(--primary-color);
+}
+
+.navbar__menu a.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* CTA: enlace con apariencia de botón (redondeado tipo píldora) */
 .navbar__cta {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 0.6rem 1.2rem;
-    border-radius: var(--radius);
+    padding: 0.7rem 1.4rem;
+    border-radius: 50px;
     font-weight: 700;
     transition: background-color var(--transition), transform var(--transition);
 }
 
 .navbar__cta:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-dark);
     transform: translateY(-2px); /* el botón "sube" un poco al pasar el mouse */
 }
 
@@ -149,11 +196,11 @@ h2 {
 /* BOTONES (reutilizables en toda la web)         */
 /* ============================================= */
 
-/* Clase base .btn: estilos comunes de todos los botones */
+/* Clase base .btn: estilos comunes de todos los botones (forma píldora) */
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: var(--radius);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
     font-weight: 700;
     transition: transform var(--transition), background-color var(--transition);
 }
@@ -169,58 +216,129 @@ h2 {
 }
 
 .btn--primary:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-dark);
 }
 
-/* Botón SECUNDARIO: solo borde, es la acción alternativa */
+/* Botón SECUNDARIO: fondo blanco con borde, es la acción alternativa */
 .btn--secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background-color: var(--white);
+    color: var(--text-color);
+    border: 2px solid #eadfd7;
 }
 
 .btn--secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* ============================================= */
 /* HERO                                           */
 /* ============================================= */
 
-/* FLEXBOX en 2 columnas: texto (izquierda) e imagen (derecha).
-   align-items: center = las dos columnas quedan centradas verticalmente. */
+/* position: relative para poder colocar las formas decorativas dentro.
+   overflow: hidden para que los blobs no generen scroll. */
 .hero {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 3rem;
     max-width: 1200px;
-    margin: 0 auto;        /* centra la sección en pantallas grandes */
+    margin: 0 auto;
     padding: 4rem 2rem;
+    overflow: hidden;
 }
 
-/* Cada columna ocupa la mitad del espacio disponible (flex: 1) */
-.hero__content {
+/* --- Formas decorativas de fondo (blobs) ---
+   Se crean con pseudo-elementos: círculos de color difuminados
+   colocados detrás del contenido (z-index: 0). */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(8px);
+    opacity: 0.35;
+}
+
+/* Blob amarillo arriba a la izquierda */
+.hero::before {
+    width: 260px;
+    height: 260px;
+    background-color: var(--accent-color);
+    top: -80px;
+    left: -100px;
+}
+
+/* Blob coral abajo a la derecha */
+.hero::after {
+    width: 300px;
+    height: 300px;
+    background-color: var(--primary-color);
+    bottom: -120px;
+    right: -120px;
+}
+
+/* Cada columna ocupa la mitad. position: relative + z-index: 1
+   para que el contenido quede POR ENCIMA de los blobs decorativos. */
+.hero__content,
+.hero__image {
+    position: relative;
+    z-index: 1;
     flex: 1;
 }
 
+/* Título gigante en dos líneas y dos colores */
 .hero__title {
-    font-size: 3.5rem;          /* título grande = lo más importante */
-    color: var(--primary-color);
-    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    font-size: 4.5rem;
+    text-transform: uppercase;
     margin-bottom: 1rem;
 }
 
+.hero__title-line1 {
+    color: var(--text-color);   /* "CREA TU" en café */
+}
+
+/* "SNACKBOX" en coral, con subrayado curvo amarillo debajo.
+   El subrayado se dibuja con ::after usando un borde redondeado. */
+.hero__title-line2 {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+}
+
+.hero__title-line2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15em;
+    width: 60%;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    z-index: -1;                /* queda detrás del texto */
+}
+
 .hero__subtitle {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: var(--font-titles);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.3;
     margin-bottom: 1rem;
+}
+
+.hero__subtitle-accent {
+    color: var(--primary-color); /* segunda línea del subtítulo en coral */
 }
 
 .hero__text {
     font-size: 1.1rem;
+    color: var(--text-light);
     margin-bottom: 2rem;
-    max-width: 500px;           /* evita líneas de texto demasiado largas */
+    max-width: 460px;
 }
 
 /* Los botones en fila, con separación entre ellos */
@@ -230,21 +348,28 @@ h2 {
 }
 
 /* --- Imagen (placeholder temporal) ---
-   Mientras no haya imagen real, mostramos un recuadro con degradado
-   y emojis grandes. Cuando tengas la imagen, reemplazaremos este bloque. */
+   Recuadro con degradado cálido y un emoji de caja grande.
+   Cuando tengas la imagen real, reemplazaremos este bloque. */
 .hero__image {
-    flex: 1;
-    height: 350px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    border-radius: var(--radius);
+    height: 380px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 24px;
     box-shadow: var(--shadow);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    color: var(--white);
 }
 
 .hero__image-emoji {
-    font-size: 5rem;
+    font-size: 6rem;
+}
+
+.hero__image-caption {
+    font-family: var(--font-script);
+    font-size: 1.8rem;
 }
 
 /* ============================================= */
@@ -270,46 +395,98 @@ h2 {
 .section__subtitle {
     font-size: 1.1rem;
     margin-bottom: 3rem;
-    color: var(--text-color);
+    color: var(--text-light);
+}
+
+/* Título en MAYÚSCULAS con destellos decorativos a los lados.
+   Los destellos (líneas coral) se hacen con ::before y ::after. */
+.section__title--sparkles {
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.section__title--sparkles::before,
+.section__title--sparkles::after {
+    content: "〰";
+    color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
 /* ============================================= */
 /* SECCIÓN "CÓMO FUNCIONA" (CSS Grid)             */
 /* ============================================= */
 
-/* GRID: 4 columnas del mismo ancho.
-   repeat(4, 1fr) = "crea 4 columnas, cada una de 1 fracción del espacio".
-   gap = separación entre las tarjetas. */
+/* GRID: 4 columnas del mismo ancho. */
 .steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
-/* Cada tarjeta de paso */
+/* Cada tarjeta de paso.
+   position: relative para poder colocar la línea punteada conectora. */
 .step-card {
+    position: relative;
     background-color: var(--white);
-    border-radius: var(--radius);
+    border-radius: 20px;
     box-shadow: var(--shadow);
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: left;
     transition: transform var(--transition);
 }
 
-/* Hover: la tarjeta se "levanta" al pasar el mouse */
 .step-card:hover {
     transform: translateY(-8px);
 }
 
-/* Número grande del paso (01, 02...) */
+/* --- Línea punteada conectora entre tarjetas ---
+   Se dibuja con ::after a la derecha de cada tarjeta.
+   La última tarjeta no la lleva (:last-child). */
+.step-card::after {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: -1.5rem;
+    width: 1.5rem;
+    border-top: 3px dotted var(--primary-color);
+}
+
+.step-card:last-child::after {
+    display: none; /* la última no conecta con nada */
+}
+
+/* Número dentro de un círculo amarillo */
 .step-card__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    font-family: var(--font-titles);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+/* Ícono grande (emoji) del paso */
+.step-card__icon {
     display: block;
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .step-card__title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+}
+
+.step-card__text {
+    font-size: 0.95rem;
+    color: var(--text-light);
 }
