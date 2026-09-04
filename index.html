@@ -19,12 +19,17 @@
     <!-- ============================================= -->
     <header class="header">
         <nav class="navbar">
-            <!-- Logo: enlaza al inicio de la página -->
-            <a href="#inicio" class="navbar__logo">SNACKLAB 🍓</a>
+            <!-- Logo con dos colores + tagline debajo -->
+            <a href="#inicio" class="navbar__logo">
+                <span class="navbar__logo-text">
+                    <span class="navbar__logo-snack">SNACK</span><span class="navbar__logo-lab">LAB</span> 🍓
+                </span>
+                <span class="navbar__logo-tagline">Crea tu snack, a tu manera.</span>
+            </a>
 
             <!-- Menú de enlaces internos (anclas a cada sección) -->
             <ul class="navbar__menu">
-                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#inicio" class="is-active">Inicio</a></li>
                 <li><a href="#como-funciona">Personaliza</a></li>
                 <li><a href="#snacks">Snacks</a></li>
                 <li><a href="#ocasiones">Ocasiones</a></li>
@@ -33,7 +38,7 @@
             </ul>
 
             <!-- Botón principal (CTA): visualmente es un botón, por dentro un enlace -->
-            <a href="#contacto" class="navbar__cta">Crear mi SnackBox</a>
+            <a href="#contacto" class="navbar__cta">📦 Crear mi SnackBox</a>
         </nav>
     </header>
 
