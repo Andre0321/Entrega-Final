@@ -14,3 +14,8 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se agregó la fuente decorativa "Shadows Into Light" (local vía @font-face) aplicada al logo y a los títulos (h1, h2)
 - Se construyó la sección hero con título, subtítulo, texto de valor, botones (principal y secundario) e imagen placeholder
 - Se crearon estilos reutilizables de botones (.btn, .btn--primary, .btn--secondary)
+- Se construyó la sección "¿Cómo funciona?" con 4 pasos usando CSS Grid
+- Se crearon estilos reutilizables de sección (.section, .section__title, .section__subtitle)
+
+### Corregido
+- Se eliminó un archivo HTML ajeno guardado por error en la carpeta img/
