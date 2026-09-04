@@ -18,18 +18,25 @@
    Si quieres cambiar un color de toda la web, lo cambias en un solo lugar. */
 :root {
     --primary-color: #ff5a5f;   /* coral: color principal de la marca */
+    --primary-dark: #e94b50;    /* coral más oscuro (hover) */
     --secondary-color: #ff9f45; /* naranja */
-    --accent-color: #ffd23f;    /* amarillo */
-    --background-color: #fff8f0;/* crema: fondo general */
-    --text-color: #4a2c2a;      /* café oscuro: texto */
+    --accent-color: #f9c22e;    /* amarillo dorado: círculos y subrayados */
+    --background-color: #fdf3ea;/* crema cálido: fondo general */
+    --cream-dark: #fbe9db;      /* crema un poco más intenso (secciones) */
+    --text-color: #4a2c2a;      /* café oscuro: texto y logo */
+    --text-light: #7a5c52;      /* café claro: descripciones */
     --white: #ffffff;
 
-    --radius: 12px;             /* redondeo estándar de bordes */
-    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* sombra suave estándar */
+    --radius: 16px;             /* redondeo estándar de bordes */
+    --shadow: 0 8px 24px rgba(233, 75, 80, 0.12); /* sombra suave cálida */
     --transition: 0.3s ease;    /* velocidad estándar de animaciones */
 
-    /* Fuente decorativa para logo y títulos (jerarquía tipográfica) */
-    --font-titles: 'Shadows Into Light', cursive;
+    /* Fuente manuscrita: solo para el logo y el tagline */
+    --font-script: 'Shadows Into Light', cursive;
+    /* Fuente gruesa y redondeada: títulos grandes (hero, secciones) */
+    --font-titles: 'Baloo 2', cursive;
+    /* Fuente para textos normales */
+    --font-body: 'Nunito', 'Segoe UI', sans-serif;
 }
 
 /* --- Reset básico ---
@@ -49,10 +56,11 @@ html {
 
 /* Estilos base del cuerpo */
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    overflow-x: hidden; /* evita scroll horizontal por las formas decorativas */
 }
 
 /* Las imágenes nunca se salen de su contenedor */
@@ -72,13 +80,13 @@ ul {
     list-style: none;
 }
 
-/* Todos los títulos de sección usarán la fuente decorativa.
-   Como aún no existen h1/h2 en el HTML, esta regla los estilizará
-   automáticamente en cuanto los creemos en las siguientes fases. */
+/* Títulos grandes: fuente gruesa y redondeada (Baloo 2) */
 h1,
-h2 {
+h2,
+h3 {
     font-family: var(--font-titles);
-    font-weight: 400;
+    font-weight: 800;
+    line-height: 1.1;
 }
 
 /* ============================================= */
@@ -107,8 +115,8 @@ h2 {
 }
 
 .navbar__logo {
-    font-family: var(--font-titles); /* fuente decorativa en el logo */
-    font-size: 1.8rem;
+    font-family: var(--font-script); /* fuente manuscrita en el logo */
+    font-size: 1.9rem;
     font-weight: 400;                /* esta fuente solo tiene peso 400 */
     color: var(--primary-color);
 }
