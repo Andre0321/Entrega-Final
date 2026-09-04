@@ -19,5 +19,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 
 - Se rediseñó la interfaz visual (paleta cálida, fuentes Baloo 2 y Nunito vía Google Fonts, logo de dos colores con tagline, hero con título de dos líneas y formas decorativas, sección "Cómo funciona" con círculos, íconos y líneas punteadas)
 
+- Se reemplazó el placeholder del hero por la imagen principal real (img/ppal.png) con texto alternativo
+
 ### Corregido
 - Se eliminó un archivo HTML ajeno guardado por error en la carpeta img/
