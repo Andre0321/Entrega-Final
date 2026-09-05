@@ -739,3 +739,57 @@ h3 {
     font-size: 0.95rem;
     color: var(--text-light);
 }
+
+/* ============================================= */
+/* SOBRE NOSOTROS                                 */
+/* ============================================= */
+
+/* Dos columnas: texto (izquierda) e imagen (derecha), como el hero */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.about__content {
+    flex: 1;
+}
+
+.about__title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* max-width limita el ancho del texto para que sea cómodo de leer.
+   Líneas muy largas cansan la vista; ~60 caracteres es lo ideal. */
+.about__text {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    max-width: 520px;
+    margin-bottom: 1rem;
+}
+
+/* Un poco de espacio antes del botón */
+.about__content .btn {
+    margin-top: 1rem;
+}
+
+/* Imagen (placeholder temporal con degradado + emoji) */
+.about__image {
+    flex: 1;
+    height: 320px;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__image-emoji {
+    font-size: 6rem;
+}
