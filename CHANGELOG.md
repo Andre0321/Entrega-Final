@@ -30,6 +30,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se construyó la sección "Sobre nosotros" (Conoce SnackLab) con la historia de la marca, imagen placeholder y CTA
 - Se construyó la sección "Contacto" con un formulario visual (nombre, email, whatsapp, ocasión, mensaje) con labels accesibles, validación básica (required, type=email, type=tel) y botón "Enviar solicitud"
 - Se construyó el footer con logo, tagline, enlaces de navegación, redes sociales y copyright
+- Se implementó el diseño responsive con media queries (breakpoints 992px, 768px y 480px): navbar simplificada en tablet/móvil, hero y "nosotros" en una columna, títulos y espaciados adaptados, botones a ancho completo y footer apilado, sin scroll horizontal
 
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
