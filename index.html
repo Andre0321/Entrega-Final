@@ -366,8 +366,45 @@
         </section>
 
         <!-- CONTACTO: formulario visual (Fase 11) -->
-        <section id="contacto">
-            <!-- Formulario: nombre, email, ocasión, mensaje -->
+        <section id="contacto" class="section">
+            <h2 class="section__title">Cuéntanos tu idea</h2>
+            <p class="section__subtitle">Escríbenos y creamos tu SnackBox ideal.</p>
+
+            <!-- Formulario visual (sin backend). action="#" no envía datos. -->
+            <form class="contact-form" action="#" method="post">
+                <!-- Campo NOMBRE: el label se conecta con el input por for/id -->
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <!-- Campo EMAIL: type="email" hace que el navegador valide el formato -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                </div>
+
+                <!-- Campo OCASIÓN: menú desplegable (select + options) -->
+                <div class="form-group">
+                    <label for="ocasion">Ocasión</label>
+                    <select id="ocasion" name="ocasion" required>
+                        <option value="" disabled selected>Selecciona una ocasión</option>
+                        <option value="cumpleanos">Cumpleaños</option>
+                        <option value="regalo">Regalo especial</option>
+                        <option value="movie">Movie Night</option>
+                        <option value="study">Study Box</option>
+                        <option value="personal">Para mí</option>
+                    </select>
+                </div>
+
+                <!-- Campo MENSAJE: textarea (varias líneas) -->
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué te gustaría en tu caja..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary">Enviar solicitud</button>
+            </form>
         </section>
 
     </main>
