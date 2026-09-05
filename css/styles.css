@@ -529,12 +529,15 @@ h3 {
     transform: translateY(-8px);
 }
 
-/* Imagen del snack: banner superior de la tarjeta.
-   object-fit: cover llena el espacio sin deformar la foto. */
+/* Imagen del snack: más compacta.
+   object-fit: contain muestra el producto completo sin recortarlo,
+   sobre un fondo crema suave para que se vea ordenado. */
 .snack-card__img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 140px;
+    object-fit: contain;
+    background-color: var(--cream-dark);
+    padding: 0.8rem;
     display: block;
 }
 
