@@ -24,6 +24,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
+- Se ajustó la presentación de los íconos de pasos para mostrar la ilustración completa (object-fit: contain) con imágenes de fondo transparente
 
 ### Corregido
 - Se eliminó un archivo HTML ajeno guardado por error en la carpeta img/
