@@ -26,6 +26,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se amplió el catálogo a 10 productos distribuidos en las 4 categorías
 - Se agregó la variante de botón pequeño (.btn--small)
 - Se construyó la sección "Ocasiones" con 4 tarjetas estilo overlay (cumpleaños, regalo, movie night, study box), cada una con ícono, título, descripción y CTA
+- Se construyó la sección "¿Por qué SnackLab?" con 4 beneficios (personalizable, variedad, para cada ocasión, a tu medida) con íconos en círculo y fondo crema
 
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
