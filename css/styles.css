@@ -778,20 +778,19 @@ h3 {
     margin-top: 1rem;
 }
 
-/* Imagen (placeholder temporal con degradado + emoji) */
+/* Imagen de la marca en "Sobre nosotros" */
 .about__image {
     flex: 1;
-    height: 320px;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-    border-radius: 24px;
-    box-shadow: var(--shadow);
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.about__image-emoji {
-    font-size: 6rem;
+.about__image img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
 }
 
 /* ============================================= */
