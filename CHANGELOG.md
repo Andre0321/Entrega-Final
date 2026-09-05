@@ -28,7 +28,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se construyó la sección "Ocasiones" con 4 tarjetas estilo overlay (cumpleaños, regalo, movie night, study box), cada una con ícono, título, descripción y CTA
 - Se construyó la sección "¿Por qué SnackLab?" con 4 beneficios (personalizable, variedad, para cada ocasión, a tu medida) con íconos en círculo y fondo crema
 - Se construyó la sección "Sobre nosotros" (Conoce SnackLab) con la historia de la marca, imagen placeholder y CTA
-- Se construyó la sección "Contacto" con un formulario visual (nombre, email, ocasión, mensaje) con labels accesibles, validación básica (required, type=email) y botón "Enviar solicitud"
+- Se construyó la sección "Contacto" con un formulario visual (nombre, email, whatsapp, ocasión, mensaje) con labels accesibles, validación básica (required, type=email, type=tel) y botón "Enviar solicitud"
 
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
