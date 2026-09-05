@@ -685,3 +685,57 @@ h3 {
 .occasion-card__cta:hover {
     opacity: 0.8;
 }
+
+/* ============================================= */
+/* ¿POR QUÉ SNACKLAB? (beneficios)                */
+/* ============================================= */
+
+/* Fondo crema para diferenciar esta sección de las blancas.
+   Crea "ritmo visual" al hacer scroll por la página. */
+.benefits-section {
+    background-color: var(--cream-dark);
+}
+
+/* Grid de 4 columnas (se apilan solas en pantallas angostas) */
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+/* Cada beneficio: centrado, sin tarjeta pesada (estilo minimalista) */
+.benefit {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Ícono dentro de un círculo blanco */
+.benefit__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: var(--white);
+    border-radius: 50%;
+    font-size: 2.2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    transition: transform var(--transition);
+}
+
+/* Al pasar el mouse por el beneficio, su ícono crece un poco */
+.benefit:hover .benefit__icon {
+    transform: scale(1.1);
+}
+
+.benefit__title {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+}
+
+.benefit__desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
