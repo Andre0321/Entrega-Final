@@ -32,6 +32,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se construyó el footer con logo, tagline, enlaces de navegación, redes sociales y copyright
 - Se implementó el diseño responsive con media queries (breakpoints 992px, 768px y 480px): navbar simplificada en tablet/móvil, hero y "nosotros" en una columna, títulos y espaciados adaptados, botones a ancho completo y footer apilado, sin scroll horizontal
 - Se reemplazaron los placeholders del catálogo por las 10 imágenes reales de producto y se reenfocó la marca hacia snacks saludables (productos, categorías, descripciones y textos del hero/catálogo actualizados)
+- Se ajustó el tamaño de las imágenes de producto a un formato más compacto (140px, object-fit contain sobre fondo crema)
 
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
