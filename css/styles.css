@@ -930,3 +930,113 @@ h3 {
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+/* ============================================= */
+/* RESPONSIVE - MEDIA QUERIES                     */
+/* ============================================= */
+
+/* --- TABLET: pantallas de 992px o menos ---
+   El hero y "nosotros" pasan de 2 columnas a 1 (apiladas).
+   Los títulos gigantes se reducen un poco. */
+@media (max-width: 992px) {
+
+    /* NAVBAR: desde tablet ocultamos los enlaces del menú para que
+       el logo y el botón "Crear mi SnackBox" quepan sin desbordarse.
+       (Opción A: navbar simplificada en pantallas medianas y pequeñas) */
+    .navbar__menu {
+        display: none;
+    }
+
+    /* Hero y Nosotros: de fila (2 columnas) a columna (apiladas) */
+    .hero,
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* El texto del hero/nosotros se centra */
+    .hero__text,
+    .about__text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Los botones del hero se centran */
+    .hero__buttons {
+        justify-content: center;
+    }
+
+    /* El título gigante del hero se reduce en tablet */
+    .hero__title {
+        font-size: 3.5rem;
+    }
+
+    /* La imagen del hero no se estira demasiado */
+    .hero__image img {
+        max-width: 420px;
+    }
+}
+
+/* --- MÓVIL: pantallas de 768px o menos ---
+   El menú de enlaces se oculta (Opción A: queda logo + botón).
+   Todo se compacta para pantallas pequeñas. */
+@media (max-width: 768px) {
+
+    /* Reducimos el padding lateral general para aprovechar el ancho.
+       (El menú ya está oculto desde el breakpoint de 992px) */
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    /* Títulos más pequeños en móvil */
+    .hero__title {
+        font-size: 2.8rem;
+    }
+
+    .section__title,
+    .about__title {
+        font-size: 2rem;
+    }
+
+    /* Menos padding vertical en las secciones (ahorra espacio) */
+    .section,
+    .hero,
+    .about {
+        padding: 2.5rem 1.5rem;
+    }
+
+    /* Los botones del hero ocupan el ancho completo y se apilan */
+    .hero__buttons {
+        flex-direction: column;
+    }
+
+    .hero__buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* El formulario con menos padding interno en móvil */
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    /* Footer: las columnas se centran al apilarse */
+    .footer__top {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* --- MÓVIL PEQUEÑO: 480px o menos ---
+   Ajuste fino para celulares angostos. */
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: 2.3rem;
+    }
+
+    /* El título con destellos: reducimos separación para que quepa */
+    .section__title--sparkles {
+        gap: 0.5rem;
+        font-size: 1.6rem;
+    }
+}
