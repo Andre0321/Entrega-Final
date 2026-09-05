@@ -793,3 +793,68 @@ h3 {
 .about__image-emoji {
     font-size: 6rem;
 }
+
+/* ============================================= */
+/* FORMULARIO DE CONTACTO                          */
+/* ============================================= */
+
+/* El formulario es una tarjeta blanca centrada, con ancho máximo.
+   text-align: left para que labels y campos queden alineados a la izquierda. */
+.contact-form {
+    max-width: 560px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: left;
+}
+
+/* Cada grupo label + campo, apilados en columna con separación */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--text-color);
+}
+
+/* Estilos comunes a inputs, select y textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border: 2px solid #eadfd7;
+    border-radius: 12px;
+    background-color: var(--background-color);
+    transition: border-color var(--transition);
+}
+
+/* :focus = cuando el campo está seleccionado (el usuario escribe en él).
+   Resaltamos el borde en coral para dar feedback visual. */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* El textarea no se puede estirar en horizontal (solo vertical) */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* El botón de enviar ocupa todo el ancho del formulario */
+.contact-form .btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
