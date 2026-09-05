@@ -231,6 +231,12 @@ h3 {
     color: var(--primary-color);
 }
 
+/* Botón PEQUEÑO: para usar dentro de tarjetas (ej. "Agregar") */
+.btn--small {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.9rem;
+}
+
 /* ============================================= */
 /* HERO                                           */
 /* ============================================= */
@@ -490,4 +496,93 @@ h3 {
 .step-card__text {
     font-size: 0.95rem;
     color: var(--text-light);
+}
+
+/* ============================================= */
+/* CATÁLOGO DE SNACKS                             */
+/* ============================================= */
+
+/* GRID RESPONSIVE con truco auto-fit:
+   repeat(auto-fit, minmax(220px, 1fr)) significa:
+   "crea tantas columnas como quepan, cada una de mínimo 220px".
+   Cuando la pantalla es angosta, las tarjetas se apilan solas.
+   ¡Esto es responsive casi gratis! */
+.snacks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjeta de producto */
+.snack-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;                 /* la imagen respeta las esquinas */
+    text-align: left;
+    transition: transform var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.snack-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Imagen del snack (placeholder: recuadro con degradado + emoji).
+   Cuando tengas imágenes reales, reemplazaremos este bloque por un <img>. */
+.snack-card__img {
+    height: 160px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+}
+
+/* Cuerpo de la tarjeta (contenido con padding).
+   flex: 1 hace que todas las tarjetas tengan la misma altura. */
+.snack-card__body {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Etiqueta de categoría (Dulces, Salados...) */
+.snack-card__tag {
+    align-self: flex-start;
+    background-color: var(--cream-dark);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.7rem;
+    border-radius: 50px;
+    margin-bottom: 0.6rem;
+}
+
+.snack-card__name {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.snack-card__desc {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    flex: 1;                          /* empuja el precio/botón hacia abajo */
+}
+
+/* Pie de la tarjeta: precio a la izquierda, botón a la derecha */
+.snack-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.snack-card__price {
+    font-family: var(--font-titles);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text-color);
 }
