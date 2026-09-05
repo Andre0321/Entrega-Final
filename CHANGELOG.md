@@ -35,6 +35,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se ajustó el tamaño de las imágenes de producto a un formato más compacto (140px, object-fit contain sobre fondo crema)
 - Se agregaron las imágenes reales de fondo a las 4 tarjetas de ocasiones (cumpleaños, regalo, movie night, study box), manteniendo el overlay oscuro para legibilidad
 - Se reemplazó el placeholder de la sección "Sobre nosotros" por la imagen real de marca (img/somos.png)
+- Se aplicó un difuminado de bordes (mask-image) a la imagen de "Sobre nosotros" para fundirla con el fondo crema
 
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
