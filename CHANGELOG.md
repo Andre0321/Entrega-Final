@@ -22,6 +22,9 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se reemplazó el placeholder del hero por la imagen principal real (img/ppal.png) con texto alternativo
 - Se reemplazaron los emojis de la sección "Cómo funciona" por 4 imágenes reales (paso1-4.png) con texto alternativo
 
+- Se construyó la sección "Nuestros snacks" (catálogo) con 4 tarjetas de categoría (dulces, salados, naturales, energéticos), cada una con etiqueta, nombre, descripción, precio en COP y botón "Agregar", usando Grid responsive (auto-fit)
+- Se agregó la variante de botón pequeño (.btn--small)
+
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
 - Se ajustó la presentación de los íconos de pasos para mostrar la ilustración completa (object-fit: contain) con imágenes de fondo transparente
