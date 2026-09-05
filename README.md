@@ -4,9 +4,9 @@
 
 ## Descripción
 
-SnackLab es un emprendimiento de cajas de snacks personalizadas. Esta aplicación
-web es un MVP visual construido con HTML5 y CSS3 que presenta la marca y guía al
-usuario hacia la acción principal: **crear su propia SnackBox**.
+SnackLab es un emprendimiento de cajas de snacks **saludables** personalizadas.
+Esta aplicación web es un MVP visual construido con HTML5 y CSS3 que presenta la
+marca y guía al usuario hacia la acción principal: **crear su propia SnackBox**.
 
 ## Problema
 
@@ -21,7 +21,7 @@ ocasión, las preferencias y el presupuesto del usuario.
 
 ## Propuesta de valor
 
-Una forma sencilla, divertida y personalizada de crear una caja de snacks.
+Una forma sencilla, divertida y personalizada de crear una caja de snacks saludables.
 
 ## Tecnologías
 
