@@ -620,32 +620,31 @@ h3 {
     transform: translateY(-8px);
 }
 
-/* --- El OVERLAY (capa oscura sobre el fondo) ---
-   Cada tarjeta tiene su color temático como fondo (temporal),
-   y encima un degradado oscuro para que el texto blanco se lea bien.
-   Cuando tengas imágenes, cambiaremos el color por url('img/...'). */
+/* --- El OVERLAY (capa oscura sobre la imagen de fondo) ---
+   Cada tarjeta usa su imagen real como fondo, y encima un degradado
+   oscuro para que el texto blanco se lea bien sobre cualquier foto. */
 .occasion-card--birthday {
-    background:
-        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
-        linear-gradient(135deg, #ff5a5f, #ff9f45);
+    background-image:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.15)),
+        url('../img/cumpleanos.png');
 }
 
 .occasion-card--gift {
-    background:
-        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
-        linear-gradient(135deg, #ff7eb3, #ff5a5f);
+    background-image:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.15)),
+        url('../img/especial.png');
 }
 
 .occasion-card--movie {
-    background:
-        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
-        linear-gradient(135deg, #8e6cef, #5a6fff);
+    background-image:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.15)),
+        url('../img/peliculas.png');
 }
 
 .occasion-card--study {
-    background:
-        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
-        linear-gradient(135deg, #ffb43f, #f9c22e);
+    background-image:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.15)),
+        url('../img/estudio.png');
 }
 
 /* Contenido de la tarjeta (texto sobre el overlay) */
