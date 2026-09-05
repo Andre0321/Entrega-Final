@@ -586,3 +586,102 @@ h3 {
     font-size: 1.1rem;
     color: var(--text-color);
 }
+
+/* ============================================= */
+/* OCASIONES (tarjetas con overlay)               */
+/* ============================================= */
+
+/* Grid responsive: mismo truco auto-fit que en snacks */
+.occasions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjeta con overlay.
+   El texto va ENCIMA de un fondo (color/imagen).
+   Usamos flex para empujar el contenido hacia la parte inferior. */
+.occasion-card {
+    position: relative;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;      /* el contenido se pega abajo */
+    color: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
+    background-size: cover;      /* la imagen/fondo cubre toda la tarjeta */
+    background-position: center;
+}
+
+.occasion-card:hover {
+    transform: translateY(-8px);
+}
+
+/* --- El OVERLAY (capa oscura sobre el fondo) ---
+   Cada tarjeta tiene su color temático como fondo (temporal),
+   y encima un degradado oscuro para que el texto blanco se lea bien.
+   Cuando tengas imágenes, cambiaremos el color por url('img/...'). */
+.occasion-card--birthday {
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
+        linear-gradient(135deg, #ff5a5f, #ff9f45);
+}
+
+.occasion-card--gift {
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
+        linear-gradient(135deg, #ff7eb3, #ff5a5f);
+}
+
+.occasion-card--movie {
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
+        linear-gradient(135deg, #8e6cef, #5a6fff);
+}
+
+.occasion-card--study {
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1)),
+        linear-gradient(135deg, #ffb43f, #f9c22e);
+}
+
+/* Contenido de la tarjeta (texto sobre el overlay) */
+.occasion-card__content {
+    position: relative;         /* queda por encima del fondo */
+    z-index: 1;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.occasion-card__icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.occasion-card__title {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+}
+
+.occasion-card__desc {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+}
+
+/* CTA de la tarjeta: aparece con un pequeño realce al hover */
+.occasion-card__cta {
+    font-weight: 700;
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+    padding-bottom: 2px;
+    transition: opacity var(--transition);
+}
+
+.occasion-card__cta:hover {
+    opacity: 0.8;
+}

@@ -25,6 +25,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 - Se construyó la sección "Nuestros snacks" (catálogo) con tarjetas de producto (etiqueta, nombre, descripción, precio en COP y botón "Agregar"), usando Grid responsive (auto-fit)
 - Se amplió el catálogo a 10 productos distribuidos en las 4 categorías
 - Se agregó la variante de botón pequeño (.btn--small)
+- Se construyó la sección "Ocasiones" con 4 tarjetas estilo overlay (cumpleaños, regalo, movie night, study box), cada una con ícono, título, descripción y CTA
 
 ### Cambiado
 - Se rediseñaron las tarjetas de "Cómo funciona": la imagen ahora cubre el ancho superior de la tarjeta (tipo banner) con el texto debajo
